@@ -107,7 +107,7 @@ const Hero = () => {
           {/* SOCIAL ICONS (mobile side-by-side fix) */}
           <div className="flex flex-row items-center justify-center gap-5">
             <a
-              href="https://github.com"
+              href="https://github.com/maran9335"
               target="_blank"
               className="px-6 py-4 rounded-full border border-white/20
               bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300"
@@ -116,7 +116,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/manimaran2244/ "
               target="_blank"
               className="px-6 py-4 rounded-full border border-white/20
               bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300"
