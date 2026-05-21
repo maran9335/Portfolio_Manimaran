@@ -13,46 +13,40 @@ import "aos/dist/aos.css";
 const Home = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      easing: "ease",
-      once: true,
-      anchorPlacement: "top-bottom",
+      duration: 1200,
+      once: false,
+      easing: "ease-in-out",
     });
   }, []);
 
   return (
-    <div className="overflow-hidden scroll-smooth">
-
-      {/* HOME */}
+    <div
+      className="overflow-hidden bg-[#050816]
+      scroll-smooth"
+    >
       <section id="home">
         <Hero />
       </section>
 
-      {/* SERVICES */}
       <section id="services">
         <Services />
       </section>
 
-      {/* RESUME */}
       <section id="resume">
         <Resume />
       </section>
 
-      {/* PROJECTS */}
       <section id="works">
         <Projects />
       </section>
 
-      {/* SKILLS */}
       <section id="skills">
         <Skills />
       </section>
 
-      {/* CONTACT */}
       <section id="contact">
         <Contact />
       </section>
-
     </div>
   );
 };

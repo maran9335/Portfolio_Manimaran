@@ -1,48 +1,98 @@
-import React from 'react'
+import React from "react";
+import { BsArrowUpRight } from "react-icons/bs";
+
+const projects = [
+  {
+    image: "/images/pro1.jpeg",
+    title: "5G Modem Infrastructure",
+    category: "Networking & Hardware",
+  },
+  {
+    image: "/images/pro2.jpeg",
+    title: "Enterprise Server Room Setup",
+    category: "Server Maintenance",
+  },
+  {
+    image: "/images/pro3.jpeg",
+    title: "Access Control Management",
+    category: "Security & Biometric",
+  },
+  {
+    image: "/images/pro4.jpeg",
+    title: "CCTV Monitoring System",
+    category: "Security System",
+  },
+];
 
 const Projects = () => {
   return (
-     <div className="pt-16 pb-16">
-        <h1 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white                                                                                                                                                                                                                                                                                                                                                                       ">
-            A Small Selection Of Recent <br/> <span className="text-cyan-300">projects</span> </h1>
-    <div className="w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-16">
-       
-       {/* 1st project */}
-        <div data-aos="fade-up" data-aos-anchor-placement="top-center"data-aos-delay="0">
-            <img src="/images/pro1.jpeg" 
-            alt="" width={800} 
-            height={650} 
-            className="rounded-lg w-75 h-75 object-cover"/>
-            <h1 className="mt-4 text-xl sm:text-2xl font-semibold text-white ">Configured and maintained 5G modem systems</h1>
-            <h1 className="pt-2 font-medium text-white">(Networking & Hardware)</h1>
-        </div>
-            {/* 2nd project */}
-        <div data-aos="fade-up" data-aos-anchor-placement="top-center"data-aos-delay="100" >
-            <img src="/images/pro2.jpeg" 
-            alt="" 
-            className="rounded-lg w-75 h-75 object-cover"/>
-            <h1 className="mt-4 text-xl sm:text-2xl font-semibold text-white ">Set up and managed server room systems</h1>
-            <h1 className="pt-2 font-medium text-white">(Server Maintenance)</h1>
-        </div>
-            {/* 3rd project */}
-        <div data-aos="fade-up" data-aos-anchor-placement="top-center"data-aos-delay="200">
-            <img src="/images/pro3.jpeg" 
-            alt=""
-            className="rounded-lg w-75 h-75 object-cover "/>
-            <h1 className="mt-4 text-xl sm:text-2xl font-semibold text-white ">
-                Access Control System Management</h1>
-            <h1 className="pt-2 font-medium text-white">(Biometric Systems)</h1>
-        </div>
-            {/* 4th Project */}
-        <div data-aos="fade-up" data-aos-anchor-placement="top-center"data-aos-delay="300">
-            <img src="/images/pro4.jpeg"          
-            className="rounded-lg w-75 h-75 object-cover "/>
-            <h1 className="mt-4 text-xl sm:text-2xl font-semibold text-white ">Set up cameras with DVR/NVR Recording systems</h1>
-            <h1 className="pt-2 font-medium text-white">(Security System)</h1>
-        </div>
-    </div>
-    </div>
-  )
-}
+    <div className="relative py-24 px-6 overflow-hidden">
+      <div className="absolute top-0 left-0 w-72 h-72 bg-cyan-500/20 blur-[120px]" />
 
-export default Projects
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* TITLE */}
+        <div className="text-center">
+          <p className="uppercase tracking-[5px] text-cyan-300 text-sm">
+            Recent Work
+          </p>
+
+          <h1 className="mt-4 text-4xl md:text-6xl font-black text-white leading-tight">
+            A Small Selection Of
+            <span className="text-cyan-300"> Recent Projects</span>
+          </h1>
+        </div>
+
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              data-aos="zoom-in-up"
+              data-aos-delay={index * 100}
+              className="group relative overflow-hidden rounded-3xl
+              border border-white/10 bg-white/5 backdrop-blur-xl
+              hover:-translate-y-3 transition-all duration-500"
+            >
+              {/* IMAGE */}
+              <div className="overflow-hidden">
+                <img
+                  src={project.image}
+                  alt="project"
+                  className="w-full h-80 object-cover
+                  group-hover:scale-110 transition-all duration-700"
+                />
+              </div>
+
+              {/* CONTENT */}
+              <div className="p-8">
+                <div className="flex items-center justify-between gap-5">
+                  <div>
+                    <p className="text-cyan-300 text-sm tracking-[3px] uppercase">
+                      {project.category}
+                    </p>
+
+                    <h2 className="mt-3 text-xl sm:text-2xl font-bold text-white">
+                      {project.title}
+                    </h2>
+                  </div>
+
+                  {/* ✅ PERFECT ROUND ICON */}
+                  <div
+                    className="w-14 aspect-square rounded-full bg-cyan-400
+                    flex items-center justify-center shrink-0
+                    shadow-[0_0_20px_rgba(34,211,238,0.6)]
+                    transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_35px_rgba(34,211,238,0.9)]"
+                  >
+                    <BsArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
