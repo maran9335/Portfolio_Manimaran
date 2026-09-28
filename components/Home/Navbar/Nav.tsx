@@ -57,7 +57,7 @@ const Nav = ({ openNav }: Props) => {
 
     const link = document.createElement("a");
     link.href = "/Manimarancv.pdf";
-    link.download = "My_CV.pdf";
+    link.download = "Manimaran_CV.pdf";
     link.click();
 
     setHasDownloaded(true);
